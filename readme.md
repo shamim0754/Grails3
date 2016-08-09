@@ -23,7 +23,13 @@ grails create-app [name] [--skip-wrapper] [--profile] [profile name] [--features
 [check doc](http://docs.grails.org/latest/ref/Command%20Line/create-app.html)
 
 `grails create-app Grails3`
-
+### Setting App ###
+default port 8080.we can it.if you want to give context path then you specify it.	
+```yml
+server:
+  port: 8484
+  contextPath: /myapp
+```  
 ### Run App ###	
 grails run-app is used to run grails app . Befault it is run on embeeded tomcat container
 General Syntax:
@@ -31,4 +37,7 @@ grails [env]* run-app
 
 [check doc](http://docs.grails.org/latest/ref/Command%20Line/run-app.html)
 
-`grails --port=8484 run-app`
+`grails run-app`
+
+### Browse App ###
+http://localhost:8484/myapp/#
