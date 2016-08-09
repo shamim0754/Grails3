@@ -24,7 +24,8 @@ grails create-app [name] [--skip-wrapper] [--profile] [profile name] [--features
 
 `grails create-app Grails3`
 ### Setting App ###
-default port 8080.we can it.if you want to give context path then you specify it.	
+grails App run on default port 8080 and no context path(domain name).if you want change this behaviour then go to grails-app\conf\application.yml and add following setting at last
+
 ```yml
 server:
   port: 8484
