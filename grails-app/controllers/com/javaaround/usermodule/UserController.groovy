@@ -2,5 +2,7 @@ package com.javaaround.usermodule
 
 class UserController {
 
-    def index() { }
+    def index() { 
+    	render view:"/user/";
+    }
 }

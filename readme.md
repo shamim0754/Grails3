@@ -73,11 +73,12 @@ Domain is used to representation of app data<br>
 `grails create-domain-class com.javaaround.usermodule.user`
 ### view ###
 view is used to display app data<br>
+
 `grails generate-views com.javaaround.usermodule.user`
 
 //com.javaaround.usermodule.user == fully qualified model name <br/>
 
 create user controller <br/>
-'grails create-controller com.javaaround.usermodule.user'
+`grails create-controller com.javaaround.usermodule.user`
 
 
