@@ -42,6 +42,7 @@ grails [env]* run-app
 	
 ### Browse App ###
 http://localhost:8484/myapp
+
 ### Deploying App other external server ###
 we can deploy app  external container (Jboss, Glassfish,websphere etc.) by follwing command(generats war on build directory) 
 
