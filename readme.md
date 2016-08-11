@@ -39,12 +39,16 @@ grails [env]* run-app
 [check doc](http://docs.grails.org/latest/ref/Command%20Line/run-app.html)
 
 `grails run-app`
-
+	
 ### Browse App ###
 http://localhost:8484/myapp
+### Deploying App other external server ###
+we can deploy app  external container (Jboss, Glassfish,websphere etc.) by follwing command(generats war on build directory) 
+
+`grails war`
 
 ### Controller ###
-A controller is responsible for handling incoming web requests and performing actions such as redirects, rendering views and so on<br>
+A controller is responsible for handling incoming web requests and performing actions such as redirects, rendering views and so on.Create Helloworld controller automatically by following command<br>
 `grails create-controller com.javaaround.helloworld`
 
 create helloworld controller with package com.javaaround if you don't provide package then it will create default package with app name like grails3.helloworld
