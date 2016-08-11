@@ -17,7 +17,7 @@ Dynamic frameworks like Rails, Django and TurboGears helped pave the way to a mo
 	 grails -version
 
 ### Create App ###
-grails create-app is used to create grails app
+grails create-app is used to create grails app<br/>
 General Syntax:
 grails create-app [name] [--skip-wrapper] [--profile] [profile name] [--features] [FEATURE NAMES]
 [check doc](http://docs.grails.org/latest/ref/Command%20Line/create-app.html)
@@ -32,7 +32,7 @@ server:
   contextPath: /myapp
 ```  
 ### Run App ###	
-grails run-app is used to run grails app . Befault it is run on embeeded tomcat container
+grails run-app is used to run grails app . Befault it is run on embeeded tomcat container<br/>
 General Syntax:
 grails [env]* run-app
 
@@ -63,5 +63,19 @@ class HelloworldController {
     	render "Hello World";
     }
 }
+### Static Scaffolding ###
+To get started quickly with Grails it is often useful to use a feature called Scaffolding to generate the skeleton of an application.Static Scaffolding means manually generate all parts like controller,domain,view,CRUD logic etc
+
+### Domain ###
+Domain is used to representation of app data<br>
+`grails create-domain-class com.javaaround.usermodule.user`
+### view ###
+view is used to display app data<br>
+`grails generate-views com.javaaround.usermodule.user`
+
+//com.javaaround.usermodule.user == fully qualified model name <br/>
+
+create user controller <br/>
+'grails create-controller com.javaaround.usermodule.user'
 
 
