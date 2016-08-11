@@ -63,6 +63,8 @@ class HelloworldController {
     	render "Hello World";
     }
 }
+```
+
 ### Static Scaffolding ###
 To get started quickly with Grails it is often useful to use a feature called Scaffolding to generate the skeleton of an application.Static Scaffolding means manually generate all parts like controller,domain,view,CRUD logic etc
 
