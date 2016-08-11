@@ -41,4 +41,10 @@ grails [env]* run-app
 `grails run-app`
 
 ### Browse App ###
-http://localhost:8484/myapp/#
+http://localhost:8484/myapp
+
+### Controller ###
+A controller is responsible for handling incoming web requests and performing actions such as redirects, rendering views and so on<br>
+`grails create-controller com.javaaround.helloworld`
+create helloworld controller with package com.javaaround if you don't provide package then it will create default package with app name like grails3.helloworld
+
