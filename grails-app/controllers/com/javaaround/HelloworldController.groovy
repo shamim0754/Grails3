@@ -6,7 +6,7 @@ class HelloworldController {
     //since there is render.
     def index() { 
     	//render "Hello World"; //render directly
-    	render (view:'greet.gsp'); // render specific view
+    	render (view: "greet"); // render specific view
     }
     
 }

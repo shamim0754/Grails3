@@ -109,22 +109,39 @@ class HelloworldController {
 }
 ```
 
-
-
 ### Static Scaffolding ###
-To get started quickly with Grails it is often useful to use a feature called Scaffolding to generate the skeleton of an application.Static Scaffolding means the code can be viewed and modified, and not generated at runtime. where as dynamic scaffolding generate code at runtime you can't see code !!!!
+To get started quickly with Grails it is often useful to use a feature called Scaffolding to generate  some basic CRUD interfaces(views,crud action) for a domain class.Static Scaffolding means the code can be viewed and modified, and not generated at runtime. where as dynamic scaffolding generate code at runtime you can't see code !!!!.
 
 ### Domain ###
 Domain is used to representation of app data.command create a domain<br>
 `grails create-domain-class com.javaaround.usermanagement.user`
+
+```java
+package com.javaaround.usermanagement
+
+class User {
+	String userId
+	String fullName
+	String address
+    static constraints = {
+    	//validation
+    	userId (blank: false)
+		fullName (blank: false)
+		address (blank: false)
+    }
+}
+```
+create user controller <br/>
+`grails create-controller '*'`
+
 ### view ###
 view is used to display app data<br>
 
-`grails generate-views com.javaaround.usermanagement.user`
+`grails generate-views com.javaaround.usermanagement.User`
 
 //com.javaaround.usermanagement.user == fully qualified model name <br/>
 
-create user controller <br/>
-`grails create-controller com.javaaround.usermanagement.user`
+if you want to generate everything(view,controller) of a single command you can use
+`grails generate-all com.javaaround.usermanagement.User
 
 

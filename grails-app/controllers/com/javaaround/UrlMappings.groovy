@@ -1,4 +1,4 @@
-package grails3
+package com.javaaround
 
 class UrlMappings {
 
