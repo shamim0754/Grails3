@@ -17,7 +17,7 @@ Dynamic frameworks like Rails, Django and TurboGears helped pave the way to a mo
 	 grails -version
 
 ### Create App ###
-grails create-app is used to create grails app<br/>
+grails create-app command is used to create grails app<br/>
 General Syntax:
 grails create-app [name] [--skip-wrapper] [--profile] [profile name] [--features] [FEATURE NAMES]
 [check doc](http://docs.grails.org/latest/ref/Command%20Line/create-app.html)
@@ -43,6 +43,10 @@ grails [env]* run-app
 ### Browse App ###
 http://localhost:8484/myapp
 
+### stop App ###
+`grails stop-app`
+or ctl-c
+
 ### Deploying App other external server ###
 we can deploy app  external container (Jboss, Glassfish,websphere etc.) by follwing command(generats war on build directory) 
 
@@ -60,10 +64,27 @@ package com.javaaround
 class HelloworldController {
 
     def index() { 
-    	render "Hello World";
+    	
     }
 }
 ```
+
+the framework will automatically look for a method name GSP file(in this case index.gsp)
+located in a folder with the same name as the controller under views.
+so create file views/helloworld/index.gsp
+
+```gsp
+<!doctype html>
+<html>
+<head>
+    <meta name="layout" content="main"/>
+    <title>Welcome to Grails</title>
+</head>
+<body>
+    Helloworld
+</body>
+</html>
+``` 
 runs app again and click hellowrorldcontroller link under availabla controller
 
 ### Static Scaffolding ###
