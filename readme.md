@@ -142,6 +142,16 @@ view is used to display app data<br>
 //com.javaaround.usermanagement.user == fully qualified model name <br/>
 
 if you want to generate everything(view,controller) of a single command you can use
-`grails generate-all com.javaaround.usermanagement.User
+
+`grails generate-all com.javaaround.usermanagement.User`
+
+run app again and click usercontroller link under availabla controller and add some user
+
+Grails byfault save data in h2 database. you can view the data by h2 web console
+
+`http://localhost:8484/myapp/dbconsole`
+
+go conf/application.yml for jdbc url .copy development jdbc url and paste in web console jdbc url and click login
+
 
 
