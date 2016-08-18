@@ -51,9 +51,17 @@ or ctl-c
 we can deploy app  external container (Jboss, Glassfish,websphere etc.) by follwing command(generats war on build directory) 
 
 `grails war`
+### Command Line###
+Interactive Mode command line have some benefits
+
+1. Allows for quicker execution of commands
+2. Use TAB for autocomplete commands
+
+To activate interactive mode type 'grails' at the command line
 
 ### Controller ###
 A controller is responsible for handling incoming web requests and performing actions such as redirects, rendering views and so on.Create Helloworld controller automatically by following command<br>
+
 `grails create-controller com.javaaround.helloworld`
 
 create helloworld controller with package com.javaaround if you don't provide package then it will create default package with app name like grails3.helloworld
@@ -84,8 +92,10 @@ so create file views/helloworld/index.gsp
     Helloworld
 </body>
 </html>
-``` 
-you can respose directly or setting different view using `rend` method
+```
+runs app again and click hellowrorldcontroller link under availabla controller
+
+you can response directly or setting different view using `render` method
 
 ```java
 package com.javaaround
@@ -93,28 +103,28 @@ package com.javaaround
 class HelloworldController {
 
     def index() { 
-    	//render "Hello World" // respose directly
+    	//render "Hello World" // response directly
     	render(view : 'greet.gsp') //setting different view
     }
 }
 ```
 
-runs app again and click hellowrorldcontroller link under availabla controller
+
 
 ### Static Scaffolding ###
 To get started quickly with Grails it is often useful to use a feature called Scaffolding to generate the skeleton of an application.Static Scaffolding means the code can be viewed and modified, and not generated at runtime. where as dynamic scaffolding generate code at runtime you can't see code !!!!
 
 ### Domain ###
-Domain is used to representation of app data<br>
-`grails create-domain-class com.javaaround.usermodule.user`
+Domain is used to representation of app data.command create a domain<br>
+`grails create-domain-class com.javaaround.usermanagement.user`
 ### view ###
 view is used to display app data<br>
 
-`grails generate-views com.javaaround.usermodule.user`
+`grails generate-views com.javaaround.usermanagement.user`
 
-//com.javaaround.usermodule.user == fully qualified model name <br/>
+//com.javaaround.usermanagement.user == fully qualified model name <br/>
 
 create user controller <br/>
-`grails create-controller com.javaaround.usermodule.user`
+`grails create-controller com.javaaround.usermanagement.user`
 
 
