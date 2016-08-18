@@ -147,11 +147,36 @@ if you want to generate everything(view,controller) of a single command you can 
 
 run app again and click usercontroller link under availabla controller and add some user
 
-Grails byfault save data in h2 database. you can view the data by h2 web console
+Grails bydefault save data in h2 database. you can view the data by h2 web console
 
 `http://localhost:8484/myapp/dbconsole`
 
 go conf/application.yml for jdbc url .copy development jdbc url and paste in web console jdbc url and click login
+
+### Change App Default Page ###
+you can change application default page .go to controller\grails3\UrlMappings.groovy
+uncomment `"/"(view:"/index")` add `"/"(action: "index",controller: "user")`
+
+
+```java
+package com.javaaround
+
+class UrlMappings {
+
+    static mappings = {
+        "/$controller/$action?/$id?(.$format)?"{
+            constraints {
+                // apply constraints here
+            }
+        }
+
+        //"/"(view:"/index")
+        "/"(action: "index",controller: "user")
+        "500"(view:'/error')
+        "404"(view:'/notFound')
+    }
+}
+```
 
 
 
