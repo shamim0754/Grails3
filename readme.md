@@ -85,10 +85,24 @@ so create file views/helloworld/index.gsp
 </body>
 </html>
 ``` 
+you can respose directly or setting different view using `rend` method
+
+```java
+package com.javaaround
+
+class HelloworldController {
+
+    def index() { 
+    	//render "Hello World" // respose directly
+    	render(view : 'greet.gsp') //setting different view
+    }
+}
+```
+
 runs app again and click hellowrorldcontroller link under availabla controller
 
 ### Static Scaffolding ###
-To get started quickly with Grails it is often useful to use a feature called Scaffolding to generate the skeleton of an application.Static Scaffolding means manually generate all parts like controller,domain,view,CRUD logic etc.Describe following how to create app by static scaffolding way.
+To get started quickly with Grails it is often useful to use a feature called Scaffolding to generate the skeleton of an application.Static Scaffolding means the code can be viewed and modified, and not generated at runtime. where as dynamic scaffolding generate code at runtime you can't see code !!!!
 
 ### Domain ###
 Domain is used to representation of app data<br>
