@@ -109,8 +109,7 @@ class HelloworldController {
 }
 ```
 
-### Static Scaffolding ###
-To get started quickly with Grails it is often useful to use a feature called Scaffolding to generate  some basic CRUD interfaces(views,crud action) for a domain class.Static Scaffolding means the code can be viewed and modified, and not generated at runtime. where as dynamic scaffolding generate code at runtime you can't see code !!!!.
+
 
 ### Domain ###
 Domain is used to representation of app data.command create a domain<br>
@@ -152,6 +151,25 @@ class HelloworldController {
     
 }
 ```
+```jsp
+<!doctype html>
+<html>
+<head>
+    <meta name="layout" content="main"/>
+    <title>Welcome to Grails</title>
+</head>
+<body>
+    Helloworld
+    UserId: <g:fieldValue bean="${user}" field="userId"/><br/>
+    Full Name: <g:fieldValue bean="${user}" field="fullName"/><br/>
+    Address: <g:fieldValue bean="${user}" field="address"/><br/>
+</body>
+</html>
+```
+
+
+### Static Scaffolding ###
+To get started quickly with Grails it is often useful to use a feature called Scaffolding to generate  some basic CRUD interfaces(views,crud action) for a domain class.Static Scaffolding means the code can be viewed and modified, and not generated at runtime. where as dynamic scaffolding generate code at runtime you can't see code !!!!.
 
 create user controller <br/>
 `grails create-controller '*'`
