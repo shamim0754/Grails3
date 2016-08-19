@@ -299,8 +299,17 @@ def index(Integer max) {
 ```
 params Scopes - Mutable map of incoming request query string or POST parameters
 `def id = params["id"] or def id = params.id`
-The `respond` method uses Content Negotiation to respond with the most appropriate content type
-`respond object,map arguments`
+The `respond` method uses Content Negotiation to respond with the most appropriate content type.Syntax <br/>
+
+Parameters:
+
+object - The object to render
+arguments - A map of arguments.
+Supported arguments:
+
+view - The view to use in case of HTML rendering
+model - The model to use in case of HTML rendering
+[formats:['xml', 'json']] // pick the best content type to respond with from the given formats
 
 index.gsp
 ```html
@@ -308,16 +317,33 @@ index.gsp
 <div class="pagination">
     <g:paginate total="${userCount ?: 0}" />
 </div>
+```
 
-```groovy
+```java
 def show(User user) {
     respond user
 }
 ```
-
 show.gsp
 ```html
 <f:display bean="user" />
+```
+```java
+def create() {
+    println(params)
+    respond new User(params)
+}
+```
+create.gsp
+```html
+<g:form action="save">
+    <fieldset class="form">
+        <f:all bean="user"/>
+    </fieldset>
+    <fieldset class="buttons">
+        <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+    </fieldset>
+</g:form>
 ```
 
 ### Change App Default Page ###
