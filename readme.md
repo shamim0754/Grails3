@@ -410,7 +410,7 @@ class UrlMappings {
 }
 ```
 ### Dynamic Scaffolding ###
-Dynamic scaffolding means there is no need to generate code, as the functionality is generated at runtime.Dynamic scaffolding is to enable it by setting the scaffold property in the controller to a specific domain class
+Dynamic scaffolding means there is no need to generate code, as the functionality is generated at runtime.Dynamic scaffolding is to enable it by setting the *scaffold* property in the controller to a specific domain class
 
 ```groovy
 class RoleController {
