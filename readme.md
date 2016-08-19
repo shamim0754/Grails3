@@ -319,7 +319,7 @@ index.gsp
 </div>
 ```
 
-```java
+```groovy
 def show(User user) {
     respond user
 }
@@ -328,7 +328,8 @@ show.gsp
 ```html
 <f:display bean="user" />
 ```
-```java
+
+```groovy
 def create() {
     println(params)
     respond new User(params)
@@ -345,7 +346,7 @@ create.gsp
     </fieldset>
 </g:form>
 ```
-```java
+```groovy
 @Transactional
 def save(User user) {
     if (user == null) {
