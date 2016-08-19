@@ -269,6 +269,16 @@ Grails bydefault save data in h2 database. you can view the data by h2 web conso
 
 go conf/application.yml for jdbc url .copy development jdbc url and paste in web console jdbc url and click login
 
+### Layout Template ###
+Usually the header, footer, and sidebars stays the same and only the content at the middle of the screen that change.Grails comes with template(main.gsp) that respective page content automatically add into main.gsp . you don't need add all thing in your page !!!
+
+layouts/main.gsp
+
+`<g:layoutTitle default="Grails"/>` is used to replace title of respective page if respetive has no title then Grails show in title bar
+
+`<g:layoutHead/>`  is used to replace respective page head tag content
+
+`<g:layoutBody/>` is used to replace respective page body tag content
 
 ### Static Scaffolding ###
 To get started quickly with Grails it is often useful to use a feature called Scaffolding to generate  some basic CRUD interfaces(views,crud logic code at controller) for a domain class automatically.Static Scaffolding means the code can be viewed and modified, and not generated at runtime. where as dynamic scaffolding generate code at runtime you can't see code !!!!.
