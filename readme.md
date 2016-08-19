@@ -141,12 +141,17 @@ class HelloworldController {
     def index() { 
         //render "Hello World"; //render directly
         //render (view: "greet"); // render specific view
+        
         User user = new User(userId: 'IT007', fullName:'Md.Shamim Miah', address:'Tangail')
-        // set view model
+        
+        // attach in view
+        [ user:user] 
 
-        //if register view name
-        //def map = [ user:user ] 
-        //render(view: "display", model: map)
+        /*
+        if register view name
+        def map = [ user:user ] 
+        render(view: "display", model: map)
+        */
     }
     
 }
@@ -172,23 +177,23 @@ class HelloworldController {
 package com.javaaround
 import com.javaaround.usermanagement.User;
 class HelloworldController {
-    // the framework will automatically look for a GSP file 
-    //located in a folder with the same method name as the controller under views 
-    //since there is render.
+    
     def index() { 
         //render "Hello World"; //render directly
         //render (view: "greet"); // render specific view
         User user = new User(userId: 'IT007', fullName:'Md.Shamim Miah', address:'Tangail')
-        // set view model
+        
 
-        //if register view name
-        //def map = [ user:user ] 
-        //render(view: "display", model: map)
+        /*if register view name
+        def map = [ user:user ] 
+        render(view: "display", model: map)
+        */
         def userList = []
         userList << new User(userId: 'IT007', fullName:'Md.Shamim Miah', address:'Tangail')
         userList << new User(userId: 'IT008', fullName:'Md.dd', address:'dgggd')
         userList << new User(userId: 'IT0010', fullName:'Md.dd', address:'ad')
 
+        // attach in view
         [ user:user,userList:userList ] 
     }
     
@@ -202,7 +207,7 @@ class HelloworldController {
     <meta name="layout" content="main"/>
     <title>Welcome to Grails</title>
 </head>
-<body>
+<body>S
     Helloworld
     UserId: <g:fieldValue bean="${user}" field="userId"/><br/>
     Full Name: <g:fieldValue bean="${user}" field="fullName"/><br/>
@@ -214,8 +219,52 @@ class HelloworldController {
 </body>
 </html>
 ```
+### Groovy Object-relational mapping (GORM) - Crud ###
+```java
+package com.javaaround
+import com.javaaround.usermanagement.User;
+class HelloworldController {
+    
+    def index() { 
+        //render "Hello World"; //render directly
+        //render (view: "greet"); // render specific view
+        User user = new User(userId: 'IT007', fullName:'Md.Shamim Miah', address:'Tangail')
+        
+        /*if register view name
+        def map = [ user:user ] 
+        render(view: "display", model: map)
+        */
+        
+        //save into db
+        user.save()
+        //read
+        User u = User.get(1)
+
+        //update
+        u.fullName="update"
+        u.save()
+
+        //delete
+        //u.delete()
+
+        //no of record
+        println(u.count)
+
+
+        def userList = []
+        userList << new User(userId: 'IT007', fullName:'Md.Shamim Miah', address:'Tangail')
+        userList << new User(userId: 'IT008', fullName:'Md.Shohel', address:'Feni')
+        userList << new User(userId: 'IT0010', fullName:'Md.Mozzammel', address:'Dhaka')
+
+        // set view model
+        [ user:user,userList:userList ] 
+    }
+    
+}
+```
+
 ### Static Scaffolding ###
-To get started quickly with Grails it is often useful to use a feature called Scaffolding to generate  some basic CRUD interfaces(views,crud action) for a domain class.Static Scaffolding means the code can be viewed and modified, and not generated at runtime. where as dynamic scaffolding generate code at runtime you can't see code !!!!.
+To get started quickly with Grails it is often useful to use a feature called Scaffolding to generate  some basic CRUD interfaces(views,crud logic code at controller) for a domain class automatically.Static Scaffolding means the code can be viewed and modified, and not generated at runtime. where as dynamic scaffolding generate code at runtime you can't see code !!!!.
 
 create user controller <br/>
 `grails create-controller '*'`
