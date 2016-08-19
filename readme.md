@@ -345,6 +345,34 @@ create.gsp
     </fieldset>
 </g:form>
 ```
+```java
+@Transactional
+def save(User user) {
+    if (user == null) {
+        transactionStatus.setRollbackOnly()
+        notFound()
+        return
+    }
+
+    if (user.hasErrors()) {
+        transactionStatus.setRollbackOnly()
+        respond user.errors, view:'create'
+        return
+    }
+
+    user.save flush:true
+
+    request.withFormat {
+        form multipartForm {
+            flash.message = message(code: 'default.created.message', args: [message(code: 'user.label', default: 'User'), user.id])
+            redirect user
+        }
+        '*' { respond user, [status: CREATED] }
+    }
+}
+```
+Grails supports the concept of flash scope as a temporary store to make attributes available for this request and the next request only
+`flash.message = "User not found for id ${params.id}"`
 
 ### Change App Default Page ###
 you can change application default page .go to controller\grails3\UrlMappings.groovy
