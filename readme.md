@@ -290,13 +290,14 @@ if you want to generate everything(view,controller) of a single command you can 
 run app again and click usercontroller link under available controller and add some user
 
 ### Explanation of auto generate code ###
-```java
+UserController.groovy
+```groovy
 def index(Integer max) {
     params.max = Math.min(max ?: 10, 100)
     respond User.list(params), model:[userCount: User.count()]
 }
 ```
-params - Mutable map of incoming request query string or POST parameters
+params Scopes - Mutable map of incoming request query string or POST parameters
 Access param <br/>
 `def id = params["id"] or def id = params.id`
 
