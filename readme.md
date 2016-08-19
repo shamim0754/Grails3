@@ -263,6 +263,13 @@ class HelloworldController {
 }
 ```
 
+Grails bydefault save data in h2 database. you can view the data by h2 web console
+
+`http://localhost:8484/myapp/dbconsole`
+
+go conf/application.yml for jdbc url .copy development jdbc url and paste in web console jdbc url and click login
+
+
 ### Static Scaffolding ###
 To get started quickly with Grails it is often useful to use a feature called Scaffolding to generate  some basic CRUD interfaces(views,crud logic code at controller) for a domain class automatically.Static Scaffolding means the code can be viewed and modified, and not generated at runtime. where as dynamic scaffolding generate code at runtime you can't see code !!!!.
 
@@ -280,14 +287,19 @@ if you want to generate everything(view,controller) of a single command you can 
 
 `grails generate-all com.javaaround.usermanagement.User`
 
-run app again and click usercontroller link under availabla controller and add some user
+run app again and click usercontroller link under available controller and add some user
 
-Grails bydefault save data in h2 database. you can view the data by h2 web console
+### Explanation of auto generate code ###
+```java
+def index(Integer max) {
+    params.max = Math.min(max ?: 10, 100)
+    respond User.list(params), model:[userCount: User.count()]
+}
+```
+params - Mutable map of incoming request query string or POST parameters
+Access param <br/>
+`def id = params["id"] or def id = params.id`
 
-`http://localhost:8484/myapp/dbconsole`
-
-go conf/application.yml for jdbc url .copy development jdbc url and paste in web console jdbc url and click login
- 
 ### Change App Default Page ###
 you can change application default page .go to controller\grails3\UrlMappings.groovy
 uncomment `"/"(view:"/index")` add `"/"(action: "index",controller: "user")`
