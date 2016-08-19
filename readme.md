@@ -298,8 +298,9 @@ def index(Integer max) {
 }
 ```
 params Scopes - Mutable map of incoming request query string or POST parameters
-Access param <br/>
 `def id = params["id"] or def id = params.id`
+The `respond` method uses Content Negotiation to respond with the most appropriate content type
+`respond object,map arguments`
 
 ### Change App Default Page ###
 you can change application default page .go to controller\grails3\UrlMappings.groovy
