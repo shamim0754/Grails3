@@ -302,6 +302,24 @@ params Scopes - Mutable map of incoming request query string or POST parameters
 The `respond` method uses Content Negotiation to respond with the most appropriate content type
 `respond object,map arguments`
 
+index.gsp
+```
+<f:table collection="${userList}" />
+<div class="pagination">
+    <g:paginate total="${userCount ?: 0}" />
+</div>
+
+```groovy
+def show(User user) {
+    respond user
+}
+```
+
+show.gsp
+```
+<f:display bean="user" />
+```
+
 ### Change App Default Page ###
 you can change application default page .go to controller\grails3\UrlMappings.groovy
 uncomment `"/"(view:"/index")` add `"/"(action: "index",controller: "user")`
