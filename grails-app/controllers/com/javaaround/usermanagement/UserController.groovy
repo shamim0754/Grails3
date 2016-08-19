@@ -6,6 +6,8 @@ import grails.transaction.Transactional
 @Transactional(readOnly = true)
 class UserController {
 
+    //only HTTP POST are allowed for the actions save, 
+    ///update, and delete. GET is not permitted. But for the other actions specified, POST and GET are allowed
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {

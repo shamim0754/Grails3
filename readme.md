@@ -131,6 +131,28 @@ class User {
     }
 }
 ```
+###Displaying Domain Contents###
+```java
+package com.javaaround
+import com.javaaround.usermanagement.User;
+class HelloworldController {
+    // the framework will automatically look for a GSP file 
+    //located in a folder with the same method name as the controller under views 
+    //since there is render.
+    def index() { 
+        //render "Hello World"; //render directly
+        //render (view: "greet"); // render specific view
+        User user = new User(userId: 'IT007', fullName:'Md.Shamim Miah', address:'Tangail')
+        // set view model
+
+        //if register view name
+        //def map = [ user:user ] 
+        //render(view: "display", model: map)
+    }
+    
+}
+```
+
 create user controller <br/>
 `grails create-controller '*'`
 
@@ -152,7 +174,7 @@ Grails bydefault save data in h2 database. you can view the data by h2 web conso
 `http://localhost:8484/myapp/dbconsole`
 
 go conf/application.yml for jdbc url .copy development jdbc url and paste in web console jdbc url and click login
-
+ 
 ### Change App Default Page ###
 you can change application default page .go to controller\grails3\UrlMappings.groovy
 uncomment `"/"(view:"/index")` add `"/"(action: "index",controller: "user")`
