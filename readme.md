@@ -303,7 +303,7 @@ The `respond` method uses Content Negotiation to respond with the most appropria
 `respond object,map arguments`
 
 index.gsp
-```
+```html
 <f:table collection="${userList}" />
 <div class="pagination">
     <g:paginate total="${userCount ?: 0}" />
@@ -316,7 +316,7 @@ def show(User user) {
 ```
 
 show.gsp
-```
+```html
 <f:display bean="user" />
 ```
 
