@@ -417,7 +417,18 @@ class RoleController {
     static scaffold = Role
 }
 ```
-No need other code.You get CRUD operation
+No need other code.You get CRUD operation !!!
+
+### Service Layer ###
+
+The Grails team(expert) discourages the all embedding of core application logic inside place(controllers), as it does not promote reuse and a clean separation of concerns.it may occur Don't Repeast Yourself (DRY) Principle.
+
+ 
+The real purpose of a controller should control (routing logic e.g receive request,call most approprivate business logic,call view to display) your app
+
+Services in Grails are the place to put the majority of the logic in your application
+
+
 
 
 
