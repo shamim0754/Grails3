@@ -451,5 +451,37 @@ def userService  //dependency injection
 userService.updateUser(user)
 ```
 
+### Validation ###
+Grails validation capability is built on Spring's Validator API and data binding capabilities
+
+User.java
+```java
+static constraints = {
+    //validation key:value
+    //size chararcter between 2 and 5,it can't blank and unique
+    userId size:2..5 , blank: false , unique: true 
+
+    fullName blank: false
+    address blank: false
+
+    //valid email
+    email email: true
+
+    // age minimum 18
+    age min: 18
+
+    // you can't give future data
+    birthDate max: new Date()
+}
+```
+
+Display error : `<g:renderErrors bean="${user}" />`
+
+If a constraint is violated Grails will by convention look for a message( grails-app/i18n/messages.properties) code of the form:
+
+`[Class Name].[Property Name].[Constraint Code]`
+
+eg.
+`user.login.blank=Your login name must be specified!`
 
 
