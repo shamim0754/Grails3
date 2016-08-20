@@ -5,7 +5,7 @@ import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
 class UserController {
-
+    def userService  //dependency injection
     /*
     only HTTP POST are allowed for the actions save, 
     update, and delete.GET is not permitted. 
@@ -40,8 +40,8 @@ class UserController {
             respond user.errors, view:'create'
             return
         }
-
-        user.save flush:true
+        userService.updateUser(user) 
+        //user.save flush:true
 
         request.withFormat {
             form multipartForm {

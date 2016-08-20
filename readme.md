@@ -428,9 +428,28 @@ The real purpose of a controller should control (routing logic e.g receive reque
 
 Services in Grails are the place to put the majority of the logic in your application
 
+`grails create-service com.javaaround.usermanagement.UserService`
 
+```java
+package com.javaaround.usermanagement
 
+import grails.transaction.Transactional
+import com.javaaround.usermanagement.User
 
+@Transactional
+class UserService {
+
+    def updateUser(User user) {
+        user.save()
+    }
+}
+
+```
+UserController.java
+```java
+def userService  //dependency injection
+userService.updateUser(user)
+```
 
 
 
