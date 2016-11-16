@@ -484,4 +484,6 @@ If a constraint is violated Grails will by convention look for a message( grails
 eg.
 `user.login.blank=Your login name must be specified!`
 
+Thank you
+
 
